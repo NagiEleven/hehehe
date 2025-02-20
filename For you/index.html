@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient purple-blue */
+            color: white;
+        }
+        .splash-screen, .love-screen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3); /* Transparent overlay for contrast */
+            backdrop-filter: blur(8px); /* Blurred effect for elegance */
+        }
+        .love-screen {
+            display: none;
+        }
+        .heart {
+            width: 150px;
+            height: 150px;
+        }
+        .message {
+            font-size: 22px;
+            margin: 20px;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+        .button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background: #8e24aa; /* Deep purple */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background: #5e35b1; /* Slightly darker on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-screen" id="splash">
+        <h1>Are you ready for something special?</h1>
+        <button class="button" onclick="openLoveScreen()">Open</button>
+    </div>
+
+    <div class="love-screen" id="loveScreen">
+        <img src="assets/images/heart.png" alt="Heart" class="heart">
+        <p class="message" id="loveMessage">
+            Happy Anniversary, my love!
+            <br><br>
+            Thank you, baby, for always appreciating even my smallest efforts, even when I feel like I’m giving the bare minimum in your eyes. Your love and kindness mean the world to me, and I’m beyond grateful for you.
+            <br><br>
+            Forever Yours,<br>
+            Your Lablab
+        </p>
+        <button class="button" onclick="showSurprise()">Click for a surprise</button>
+    </div>
+
+    <script>
+        function openLoveScreen() {
+            document.getElementById('splash').style.display = 'none';
+            document.getElementById('loveScreen').style.display = 'flex';
+        }
+
+        function showSurprise() {
+            document.getElementById('loveMessage').innerHTML = "You are my heart, <br>my soul, <br>my everything! ❤️";
+        }
+    </script>
+</body>
+</html>
